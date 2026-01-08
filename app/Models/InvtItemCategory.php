@@ -11,10 +11,10 @@ class InvtItemCategory extends Model
 
     protected $fillable = [
         'company_id',
-        'item_category_name',
         'item_category_code',
-        'item_category_status',
+        'item_category_name',
         'item_category_remark',
+        'margin_percentage',
         'data_state',
         'updated_id',
         'created_id',
@@ -23,8 +23,8 @@ class InvtItemCategory extends Model
     ];
 
     protected $casts = [
-        'item_category_status' => 'integer',
         'data_state' => 'integer',
+        'branch_id' => 'integer',
     ];
 
     public function items()

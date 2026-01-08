@@ -11,9 +11,8 @@ class InvtItemUnit extends Model
 
     protected $fillable = [
         'company_id',
-        'item_unit_name',
         'item_unit_code',
-        'item_unit_status',
+        'item_unit_name',
         'item_unit_remark',
         'data_state',
         'updated_id',
@@ -23,8 +22,8 @@ class InvtItemUnit extends Model
     ];
 
     protected $casts = [
-        'item_unit_status' => 'integer',
         'data_state' => 'integer',
+        'branch_id' => 'integer',
     ];
 
     public function items()

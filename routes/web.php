@@ -8,6 +8,9 @@ use App\Livewire\BarangList;
 use App\Livewire\SelectiveMigrate;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
+use App\Livewire\InvtItem\ItemIndex;
+use App\Livewire\InvtItem\ItemEdit;
+
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -37,4 +40,7 @@ Route::middleware(['auth'])->group(function () {
             ),
         )
         ->name('two-factor.show');
+
+        Route::get('/items', ItemIndex::class)->name('items.index');
+        Route::get('/items/{item}', ItemEdit::class)->name('items.edit');
 });

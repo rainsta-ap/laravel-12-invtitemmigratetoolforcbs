@@ -85,6 +85,7 @@
                             <li>This tool will migrate items from the CBS database ({{ config('database.connections.mysql2.database') }}) to the new system.</li>
                             <li>Categories and units will be created automatically if they don't exist.</li>
                             <li>Existing items with the same code will not be updated - only new items are created.</li>
+                            <li>Ensure a default warehouse with ID 1 exists in the system, or the migration will fail.</li>
                             <li>Make sure to backup your data before running the migration.</li>
                         </ul>
                     </div>

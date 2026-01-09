@@ -2,10 +2,10 @@
     <div class="space-y-6">
         <div>
             <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
-                Daftar Barang (CBS Database)
+                Item List (CBS Database)
             </h2>
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                Menampilkan data barang dari database sumber CBS.
+                Showing a list of item data from CBS.
             </p>
         </div>
 
@@ -15,17 +15,17 @@
                     <!-- Search and Filter -->
                     <div class="flex flex-col sm:flex-row gap-4">
                         <div class="flex-1">
-                            <flux:label for="search">Cari Barang</flux:label>
+                            <flux:label for="search">Search Item</flux:label>
                             <flux:input
                                 wire:model.live.debounce.300ms="search"
                                 type="text"
                                 id="search"
-                                placeholder="Cari berdasarkan kode, nama, atau kategori..."
+                                placeholder="Search by code, name, or category..."
                                 class="mt-1"
                             />
                         </div>
                         <div class="sm:w-32">
-                            <flux:label for="perPage">Tampilkan</flux:label>
+                            <flux:label for="perPage">Show</flux:label>
                             <flux:select wire:model.live="perPage" id="perPage" class="mt-1">
                                 <option value="10">10</option>
                                 <option value="25">25</option>
@@ -34,29 +34,29 @@
                             </flux:select>
                         </div>
                     </div>
-
+                    
                     <!-- Table -->
                     <div class="overflow-x-auto">
                         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                             <thead class="bg-gray-50 dark:bg-gray-800">
                                 <tr>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Kode Barang
+                                        Item Code
                                     </th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Nama Barang
+                                        Item Name
                                     </th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Kategori Brg
+                                        Category
                                     </th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Satuan
+                                        Unit
                                     </th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Isi
+                                        Quantity
                                     </th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Harga
+                                        Price
                                     </th>
                                 </tr>
                             </thead>
@@ -85,7 +85,7 @@
                                 @empty
                                 <tr>
                                     <td colspan="6" class="px-6 py-4 text-center text-sm text-gray-500 dark:text-gray-400">
-                                        Tidak ada data barang ditemukan.
+                                        No item data found.
                                     </td>
                                 </tr>
                                 @endforelse

@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\InvtItemStock;
+use App\Models\InvtItemBarcode;
+use App\Models\InvtItemPackge;
 
 class InvtItem extends Model
 {
@@ -69,6 +72,22 @@ class InvtItem extends Model
     }
 
     public function packges()
+    {
+        return $this->hasMany(InvtItemPackge::class, 'item_id', 'item_id');
+    }
+
+    
+       public function stocks()
+    {
+        return $this->hasMany(InvtItemStock::class, 'item_id', 'item_id');
+    }
+
+    public function barcodes()
+    {
+        return $this->hasMany(InvtItemBarcode::class, 'item_id', 'item_id');
+    }
+
+    public function packages()
     {
         return $this->hasMany(InvtItemPackge::class, 'item_id', 'item_id');
     }

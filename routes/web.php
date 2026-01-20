@@ -43,4 +43,7 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/items', ItemIndex::class)->name('items.index');
         Route::get('/items/{item}', ItemEdit::class)->name('items.edit');
+Route::get('legacy/items', BarangList::class)->name('legacy.items');
+
+        Route::redirect('barang-list', 'legacy/items');
 });
